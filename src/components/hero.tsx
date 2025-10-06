@@ -43,8 +43,7 @@ export default function Hero() {
             {/* Subline with scan line effect */}
             <div className="scan-line">
               <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Serial entrepreneur and technology innovator creating breakthrough solutions 
-                that transform industries and improve lives worldwide.
+                Co-Founder DCOMM — I don’t sell services, I build systems that sell themselves.
               </p>
             </div>
             
@@ -52,7 +51,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
               <Button 
                 size="lg" 
-                className="text-lg px-8 py-6 h-auto glass-effect glow-effect hover-lift border border-white/20 hover:border-white/40 transition-all duration-300"
+                className="text-lg px-8 py-6 h-auto glass-effect glow-effect hover-lift border border-white/20 hover:border-white/40 transition-all duration-300 text-white"
               >
                 <span className="relative z-10">View My Work</span>
                 <ArrowRight className="ml-2 h-5 w-5" />

@@ -1,7 +1,7 @@
 "use client"
 
 import Link from 'next/link'
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react'
+import { Linkedin, Mail, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const footerLinks = {
@@ -19,10 +19,9 @@ const footerLinks = {
     { name: 'GreenTech', href: 'https://greentech.com' },
   ],
   social: [
-    { name: 'GitHub', href: 'https://github.com/johndoe', icon: Github },
-    { name: 'LinkedIn', href: 'https://linkedin.com/in/johndoe', icon: Linkedin },
-    { name: 'Twitter', href: 'https://twitter.com/johndoe', icon: Twitter },
-    { name: 'Email', href: 'mailto:john@johndoe.com', icon: Mail },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/himanshuyadav-93b9151a5', icon: Linkedin },
+    { name: 'Personal', href: 'https://t.co/4OY3sbscFl', icon: ExternalLink },
+    { name: 'Email', href: 'mailto:hy486516@gmail.com', icon: Mail },
   ]
 }
 
@@ -36,10 +35,10 @@ export default function Footer() {
           {/* Brand section */}
           <div className="lg:col-span-1">
             <Link href="#home" className="text-2xl font-bold text-primary mb-4 block">
-              John Doe
+              Himanshu Yadav
             </Link>
             <p className="text-sm text-muted-foreground mb-6 max-w-xs">
-              Serial entrepreneur and technology innovator building the future of business.
+              Co-Founder DCOMM | I don’t sell services, I build systems that sell themselves.
             </p>
             <div className="flex space-x-2">
               {footerLinks.social.map((social) => (
@@ -103,9 +102,9 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Contact</h3>
             <div className="space-y-2 text-sm text-muted-foreground">
-              <p>john@johndoe.com</p>
-              <p>+1 (555) 123-4567</p>
-              <p>San Francisco, CA</p>
+              <p>hy486516@gmail.com</p>
+              <p>6263597941</p>
+              <p>Madhya Pradesh, India</p>
             </div>
           </div>
         </div>
@@ -114,7 +113,7 @@ export default function Footer() {
         <div className="border-t border-border mt-8 pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <p className="text-sm text-muted-foreground">
-              © {currentYear} John Doe. All rights reserved.
+              © {currentYear} Himanshu Yadav. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm text-muted-foreground">
               <Link href="/privacy" className="hover:text-primary transition-colors">

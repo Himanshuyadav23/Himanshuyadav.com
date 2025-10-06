@@ -2,28 +2,22 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, ExternalLink } from 'lucide-react'
+import { Mail, Phone, MapPin, Send, Linkedin, ExternalLink } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 
 const socialLinks = [
   {
-    name: 'GitHub',
-    icon: Github,
-    url: 'https://github.com/johndoe',
-    color: 'hover:text-gray-900 dark:hover:text-gray-100'
-  },
-  {
     name: 'LinkedIn',
     icon: Linkedin,
-    url: 'https://linkedin.com/in/johndoe',
+    url: 'https://www.linkedin.com/in/himanshuyadav-93b9151a5',
     color: 'hover:text-blue-600'
   },
   {
-    name: 'Twitter',
-    icon: Twitter,
-    url: 'https://twitter.com/johndoe',
-    color: 'hover:text-blue-400'
+    name: 'Personal',
+    icon: ExternalLink,
+    url: 'https://t.co/4OY3sbscFl',
+    color: 'hover:text-gray-900 dark:hover:text-gray-100'
   }
 ]
 
@@ -206,7 +200,7 @@ export default function Contact() {
                     <Mail className="h-5 w-5 text-primary" />
                     <div>
                       <p className="font-medium">Email</p>
-                      <p className="text-sm text-muted-foreground">john@johndoe.com</p>
+                      <p className="text-sm text-muted-foreground">hy486516@gmail.com</p>
                     </div>
                   </div>
                   
@@ -214,7 +208,7 @@ export default function Contact() {
                     <Phone className="h-5 w-5 text-primary" />
                     <div>
                       <p className="font-medium">Phone</p>
-                      <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
+                      <p className="text-sm text-muted-foreground">6263597941</p>
                     </div>
                   </div>
                   
@@ -222,7 +216,7 @@ export default function Contact() {
                     <MapPin className="h-5 w-5 text-primary" />
                     <div>
                       <p className="font-medium">Location</p>
-                      <p className="text-sm text-muted-foreground">San Francisco, CA</p>
+                      <p className="text-sm text-muted-foreground">Madhya Pradesh, India</p>
                     </div>
                   </div>
                 </CardContent>
@@ -267,7 +261,7 @@ export default function Contact() {
                     technology and entrepreneurship, I&apos;d love to connect.
                   </p>
                   <Button variant="outline" size="sm" asChild>
-                    <a href="mailto:john@johndoe.com">
+                    <a href="mailto:hy486516@gmail.com">
                       <Mail className="mr-2 h-4 w-4" />
                       Email Me Directly
                     </a>

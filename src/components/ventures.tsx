@@ -11,43 +11,44 @@ import { Button } from '@/components/ui/button'
 const ventures = [
   {
     id: '1',
-    name: 'TechFlow',
-    description: 'AI-powered workflow automation platform that helps enterprises streamline operations and reduce costs by 40%.',
+    name: 'DCOMM',
+    description: 'Digital innovation studio delivering websites, AI social media, automation, ads, and growth systems.',
     logo: '/api/placeholder/80/80',
-    website: 'https://techflow.com',
+    website: 'https://www.dcommunications.co.in/',
     status: 'active' as const,
-    founded: '2020',
-    employees: '50+',
-    funding: '$15M Series A'
+    founded: '2025',
+    employees: '5+',
+    funding: 'Bootstrapped'
   },
   {
     id: '2',
-    name: 'DataVault',
-    description: 'Secure cloud storage solution for sensitive data with enterprise-grade encryption and compliance.',
+    name: 'Social Tact',
+    description: 'Managed creators and businesses on social media. Built, scaled, and later acquired.',
     logo: '/api/placeholder/80/80',
-    website: 'https://datavault.com',
+    website: '#',
     status: 'acquired' as const,
-    founded: '2018',
-    employees: '25',
-    funding: 'Acquired by Microsoft'
+    founded: '2024',
+    employees: '—',
+    funding: 'Acquired'
   },
   {
     id: '3',
-    name: 'GreenTech',
-    description: 'Sustainable technology solutions for renewable energy management and carbon footprint tracking.',
+    name: 'BrandPulse',
+    description: 'Currently building a lean brand ops platform focused on automation-first growth.',
     logo: '/api/placeholder/80/80',
-    website: 'https://greentech.com',
-    status: 'active' as const,
-    founded: '2022',
-    employees: '15',
-    funding: '$5M Seed'
+    website: '#',
+    status: 'building' as const,
+    founded: '2025',
+    employees: '—',
+    funding: 'In development'
   }
 ]
 
 const statusColors = {
   active: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300',
   acquired: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300',
-  closed: 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300'
+  closed: 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300',
+  building: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300'
 }
 
 export default function Ventures() {

@@ -7,8 +7,9 @@ import { Badge } from '@/components/ui/badge'
 
 export default function About() {
   const skills = [
-    'Product Strategy', 'Team Building', 'Fundraising', 'Technology Innovation',
-    'Market Analysis', 'Strategic Partnerships', 'Operations', 'Leadership'
+    'Brand Strategy', 'Blockchain', 'Web Development',
+    'Content Strategy', 'Ad Funnels', 'Automation',
+    'Full-stack Development', 'Growth Marketing'
   ]
 
   return (
@@ -43,7 +44,7 @@ export default function About() {
               <div className="relative">
                 <Image
                   src="/api/placeholder/400/500"
-                  alt="John Doe"
+                  alt="Himanshu Yadav"
                   width={400}
                   height={500}
                   className="rounded-lg shadow-lg"
@@ -52,17 +53,16 @@ export default function About() {
               </div>
               
               <div className="space-y-4">
-                <h3 className="text-2xl font-bold">John Doe</h3>
+                <h3 className="text-2xl font-bold">Himanshu Yadav</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Serial entrepreneur with over 10 years of experience building and scaling 
-                  technology companies. I&apos;ve founded 3 successful startups, raised over $50M 
-                  in funding, and led teams of 100+ people across multiple industries.
+                  Co-Founder of DCOMM. I don’t sell services — I build systems that sell themselves.
+                  Based in Indore, India, I work at the intersection of tech, strategy, and automation.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  My passion lies in identifying market opportunities and building products 
-                  that solve real-world problems. I believe in the power of technology to 
-                  create positive change and am committed to mentoring the next generation 
-                  of entrepreneurs.
+                  I help brands and creators grow without fluff: high-converting landing pages, 
+                  content that isn’t template-y, ad funnels that actually work, and automation-first 
+                  workflows that keep things lean and scalable. I also mentor students and early-stage 
+                  founders on pitching, building, and navigating tech careers.
                 </p>
               </div>
             </motion.div>
@@ -85,9 +85,8 @@ export default function About() {
                     <div>
                       <h4 className="text-lg font-semibold mb-2 text-glow">Founder&apos;s Note</h4>
                       <p className="text-muted-foreground leading-relaxed">
-                        &ldquo;Every great company starts with a simple idea and the courage to pursue it. 
-                        My journey has taught me that success isn&apos;t just about having the right idea—it&apos;s 
-                        about execution, persistence, and surrounding yourself with amazing people.&rdquo;
+                        &ldquo;Growth comes from clarity, not chaos. Ship fast, automate smarter, and let
+                        systems do the heavy lifting. If it helps a brand grow with focus, I’m in.&rdquo;
                       </p>
                     </div>
                   </div>

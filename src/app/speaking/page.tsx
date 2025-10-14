@@ -1,17 +1,13 @@
 import Navbar from '@/components/navbar'
-import Projects from '@/components/projects'
+import Speaking from '@/components/speaking'
 import Footer from '@/components/footer'
 
-export default function ProjectsPage() {
+export default function SpeakingPage() {
   return (
     <main className="min-h-screen">
       <Navbar />
-      <Projects />
+      <Speaking />
       <Footer />
     </main>
   )
 }
-
-
-
-

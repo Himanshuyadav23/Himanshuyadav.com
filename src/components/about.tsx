@@ -55,7 +55,7 @@ export default function About() {
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold">Himanshu Yadav</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Co-Founder of DCOMM. I don’t sell services — I build systems that sell themselves.
+                  Co-Founder of DCOMM. I don’t sell services, I build systems that sell themselves.
                   Based in Indore, India, I work at the intersection of tech, strategy, and automation.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">

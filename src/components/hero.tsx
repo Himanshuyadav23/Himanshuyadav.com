@@ -43,7 +43,7 @@ export default function Hero() {
             {/* Subline with scan line effect */}
             <div className="scan-line">
               <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Co-Founder DCOMM — I don’t sell services, I build systems that sell themselves.
+                Co-Founder DCOMM, I don’t sell services, I build systems that sell themselves.
               </p>
             </div>
             

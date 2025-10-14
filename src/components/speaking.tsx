@@ -8,6 +8,19 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
+const speakingImages = [
+  '/images/speaking/DSP_6742.JPG',
+  '/images/speaking/IMG_6920.jpg',
+  '/images/speaking/IMG_6921.jpg',
+  '/images/speaking/IMG_6922.jpg',
+  '/images/speaking/IMG_8721.jpg',
+  '/images/speaking/IMG_8757.jpg',
+  '/images/speaking/IMG_8800.jpg',
+  '/images/speaking/IMG20220930140116.jpg',
+  '/images/speaking/RSP_0291.jpg',
+  '/images/speaking/RSP_8742.jpg'
+]
+
 const speakingEngagements = [
   {
     id: '1',
@@ -18,7 +31,7 @@ const speakingEngagements = [
     audience: '500+ attendees',
     duration: '45 minutes',
     type: 'Keynote',
-    image: '/api/placeholder/600/300',
+    image: speakingImages[0],
     description: 'Exploring how artificial intelligence is reshaping the startup landscape and what founders need to know to stay ahead.',
     topics: ['AI', 'Entrepreneurship', 'Future Tech'],
     featured: true,
@@ -33,7 +46,7 @@ const speakingEngagements = [
     audience: '300+ attendees',
     duration: '60 minutes',
     type: 'Workshop',
-    image: '/api/placeholder/600/300',
+    image: speakingImages[1],
     description: 'Key insights on hiring, culture, and leadership from scaling multiple companies from 0 to 100+ employees.',
     topics: ['Leadership', 'Team Building', 'Scaling'],
     featured: true,
@@ -48,7 +61,7 @@ const speakingEngagements = [
     audience: '200+ attendees',
     duration: '30 minutes',
     type: 'Panel Discussion',
-    image: '/api/placeholder/600/300',
+    image: speakingImages[2],
     description: 'How to maintain innovation and growth during economic uncertainty and market volatility.',
     topics: ['Innovation', 'Crisis Management', 'Growth'],
     featured: false
@@ -62,7 +75,7 @@ const speakingEngagements = [
     audience: '150+ students',
     duration: '90 minutes',
     type: 'Guest Lecture',
-    image: '/api/placeholder/600/300',
+    image: speakingImages[3],
     description: 'A comprehensive look at the entrepreneurial journey from initial idea to successful exit.',
     topics: ['Entrepreneurship', 'Business Strategy', 'Venture Capital'],
     featured: false
@@ -76,7 +89,7 @@ const speakingEngagements = [
     audience: '100+ attendees',
     duration: '75 minutes',
     type: 'Seminar',
-    image: '/api/placeholder/600/300',
+    image: speakingImages[4],
     description: 'Understanding the mental models and psychological traits that drive successful entrepreneurship.',
     topics: ['Psychology', 'Founders', 'Mental Models'],
     featured: false
@@ -90,7 +103,7 @@ const speakingEngagements = [
     audience: '400+ attendees',
     duration: '40 minutes',
     type: 'Keynote',
-    image: '/api/placeholder/600/300',
+    image: speakingImages[5],
     description: 'How technology companies can drive sustainable innovation while maintaining profitability.',
     topics: ['Sustainability', 'Technology', 'Innovation'],
     featured: false
@@ -171,11 +184,11 @@ export default function Speaking() {
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               <Badge variant="secondary" className="bg-primary/10 text-primary px-4 py-2 text-sm">
                 <Mic className="w-4 h-4 mr-2" />
-                50+ Speaking Engagements
+                10+ Speaking Engagements
               </Badge>
               <Badge variant="secondary" className="bg-primary/10 text-primary px-4 py-2 text-sm">
                 <Users className="w-4 h-4 mr-2" />
-                10,000+ Audience Members
+                1000+ Audience Members
               </Badge>
               <Badge variant="secondary" className="bg-primary/10 text-primary px-4 py-2 text-sm">
                 <Award className="w-4 h-4 mr-2" />
@@ -215,11 +228,6 @@ export default function Speaking() {
                     </CardHeader>
                     <CardContent className="space-y-3">
                       <CardDescription>{service.description}</CardDescription>
-                      <div className="text-sm text-muted-foreground">
-                        <p><strong>Duration:</strong> {service.duration}</p>
-                        <p><strong>Audience:</strong> {service.audience}</p>
-                        <p className="text-primary font-semibold">{service.price}</p>
-                      </div>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -227,155 +235,45 @@ export default function Speaking() {
             </div>
           </div>
 
-          {/* Featured Speaking Engagements */}
+          {/* Speaking Gallery */}
           <div className="mb-20">
-            <h2 className="text-3xl font-bold text-center mb-12">Recent Speaking Engagements</h2>
-            <div className="grid lg:grid-cols-2 gap-8 mb-16">
-              {featuredEngagements.map((engagement, index) => (
+            <h2 className="text-3xl font-bold text-center mb-12">Speaking Gallery</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+              {speakingImages.map((image, index) => (
                 <motion.div
-                  key={engagement.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
+                  className="group cursor-pointer"
                 >
-                  <Card className="h-full overflow-hidden group glass-effect glow-effect hover-lift border border-white/20 hover:border-white/40 transition-all duration-300">
-                    <div className="relative h-48 overflow-hidden">
-                      <Image
-                        src={engagement.image}
-                        alt={engagement.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                      <div className="absolute top-4 left-4">
-                        <Badge variant="secondary" className="bg-white/10 text-white glass-effect glow-effect border border-white/20">
-                          {engagement.type}
-                        </Badge>
-                      </div>
-                      <div className="absolute top-4 right-4">
-                        <Badge variant="secondary" className="bg-primary/10 text-primary">
-                          Featured
-                        </Badge>
+                  <div className="relative aspect-square overflow-hidden rounded-lg glass-effect glow-effect hover-lift border border-white/20 hover:border-white/40 transition-all duration-300">
+                    <Image
+                      src={image}
+                      alt={`Speaking engagement ${index + 1}`}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none'
+                        e.currentTarget.nextElementSibling.style.display = 'flex'
+                      }}
+                    />
+                    <div className="hidden absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                          <Mic className="w-6 h-6 text-primary" />
+                        </div>
+                        <p className="text-xs text-muted-foreground">Speaking {index + 1}</p>
                       </div>
                     </div>
-                    
-                    <CardHeader>
-                      <CardTitle className="text-xl line-clamp-2">{engagement.title}</CardTitle>
-                      <CardDescription className="text-lg font-medium text-primary">
-                        {engagement.event}
-                      </CardDescription>
-                    </CardHeader>
-                    
-                    <CardContent className="space-y-4">
-                      <CardDescription className="line-clamp-3">
-                        {engagement.description}
-                      </CardDescription>
-                      
-                      <div className="grid grid-cols-2 gap-4 text-sm text-muted-foreground">
-                        <div className="flex items-center space-x-2">
-                          <Calendar className="h-4 w-4" />
-                          <span>{new Date(engagement.date).toLocaleDateString()}</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <Clock className="h-4 w-4" />
-                          <span>{engagement.duration}</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <MapPin className="h-4 w-4" />
-                          <span>{engagement.location}</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <Users className="h-4 w-4" />
-                          <span>{engagement.audience}</span>
-                        </div>
-                      </div>
-                      
-                      <div className="flex flex-wrap gap-2">
-                        {engagement.topics.map((topic) => (
-                          <Badge key={topic} variant="outline" className="text-xs glass-effect glow-effect border border-white/20 hover:border-white/40 transition-all duration-300">
-                            {topic}
-                          </Badge>
-                        ))}
-                      </div>
-                      
-                      <div className="pt-4">
-                        {(engagement.recordingUrl || engagement.slidesUrl) && (
-                          <Button 
-                            variant="outline" 
-                            className="w-full glass-effect neon-border hover:bg-white/10 hover:text-white transition-all duration-300"
-                            asChild
-                          >
-                            <Link href={engagement.recordingUrl || engagement.slidesUrl || '#'} target="_blank" rel="noopener noreferrer">
-                              {engagement.recordingUrl ? 'Watch Recording' : 'View Slides'}
-                              <ExternalLink className="ml-2 h-4 w-4" />
-                            </Link>
-                          </Button>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Other Engagements Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-              {otherEngagements.map((engagement, index) => (
-                <motion.div
-                  key={engagement.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <Card className="h-full group hover:shadow-lg transition-shadow duration-300">
-                    <div className="relative h-32 overflow-hidden">
-                      <Image
-                        src={engagement.image}
-                        alt={engagement.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                      <div className="absolute top-2 left-2">
-                        <Badge variant="secondary" className="text-xs bg-white/10 text-white">
-                          {engagement.type}
-                        </Badge>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute bottom-2 left-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="text-white text-xs font-medium truncate">
+                        Speaking Engagement {index + 1}
                       </div>
                     </div>
-                    
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-lg line-clamp-2">{engagement.title}</CardTitle>
-                      <CardDescription className="text-sm font-medium text-primary">
-                        {engagement.event}
-                      </CardDescription>
-                    </CardHeader>
-                    
-                    <CardContent className="space-y-3">
-                      <CardDescription className="line-clamp-2 text-sm">
-                        {engagement.description}
-                      </CardDescription>
-                      
-                      <div className="text-xs text-muted-foreground space-y-1">
-                        <p>{new Date(engagement.date).toLocaleDateString()} • {engagement.location}</p>
-                        <p>{engagement.duration} • {engagement.audience}</p>
-                      </div>
-                      
-                      <div className="flex flex-wrap gap-1">
-                        {engagement.topics.slice(0, 2).map((topic) => (
-                          <Badge key={topic} variant="outline" className="text-xs">
-                            {topic}
-                          </Badge>
-                        ))}
-                        {engagement.topics.length > 2 && (
-                          <Badge variant="outline" className="text-xs">
-                            +{engagement.topics.length - 2}
-                          </Badge>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
+                  </div>
                 </motion.div>
               ))}
             </div>

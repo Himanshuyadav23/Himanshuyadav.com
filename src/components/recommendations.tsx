@@ -9,74 +9,41 @@ import { Badge } from '@/components/ui/badge'
 const recommendations = [
   {
     id: '1',
-    name: 'Sarah Johnson',
-    position: 'CEO & Founder',
-    company: 'TechCorp Solutions',
-    image: '/api/placeholder/80/80',
+    name: 'Hirni Desai',
+    position: 'Healthpreneur | Co-Founder',
+    company: 'Bliss Wellness & Bliss Lifesciences',
+    image: null,
+    initials: 'HD',
     rating: 5,
-    text: 'John is an exceptional leader with incredible vision and execution skills. His ability to build and scale teams while maintaining high-quality standards is remarkable. I would highly recommend working with him.',
-    relationship: 'Former Colleague',
-    linkedinUrl: 'https://linkedin.com/in/sarah-johnson',
+    text: 'Himanshu excelled during his digital marketing internship with his innovative mindset and strong analytical skills. He quickly adapted to challenges, contributed valuable ideas, and executed campaigns effectively. His dedication, creativity, and team-oriented attitude make him a standout professional with immense potential for success in the marketing field.',
+    relationship: 'Mentor',
+    linkedinUrl: '#',
     featured: true
   },
   {
     id: '2',
-    name: 'Michael Chen',
-    position: 'CTO',
-    company: 'InnovateLab',
-    image: '/api/placeholder/80/80',
+    name: 'Kapil Chawla',
+    position: 'Cancer survivor and leader',
+    company: '10+ years in social impact and community programs',
+    image: null,
+    initials: 'KC',
     rating: 5,
-    text: 'Working with John has been one of the most rewarding experiences of my career. His technical expertise combined with strategic thinking makes him a standout professional in the industry.',
-    relationship: 'Business Partner',
-    linkedinUrl: 'https://linkedin.com/in/michael-chen',
+    text: 'Very hard-working and creative young man. He has solutions to every query on the web and social media. I love working with him.',
+    relationship: 'Mentor',
+    linkedinUrl: '#',
     featured: true
   },
   {
     id: '3',
-    name: 'Emily Rodriguez',
-    position: 'Product Manager',
-    company: 'StartupXYZ',
-    image: '/api/placeholder/80/80',
+    name: 'Deepa Kaushal',
+    position: 'Principal',
+    company: 'Softvision College',
+    image: null,
+    initials: 'DK',
     rating: 5,
-    text: 'John brings incredible energy and innovation to every project. His ability to see the big picture while paying attention to details is what sets him apart from others.',
-    relationship: 'Client',
-    linkedinUrl: 'https://linkedin.com/in/emily-rodriguez',
-    featured: false
-  },
-  {
-    id: '4',
-    name: 'David Kim',
-    position: 'Venture Partner',
-    company: 'Capital Ventures',
-    image: '/api/placeholder/80/80',
-    rating: 5,
-    text: 'John is a visionary entrepreneur with exceptional leadership qualities. His track record speaks for itself, and I have no doubt he will continue to make significant impact in the tech industry.',
-    relationship: 'Investor',
-    linkedinUrl: 'https://linkedin.com/in/david-kim',
-    featured: false
-  },
-  {
-    id: '5',
-    name: 'Lisa Thompson',
-    position: 'Head of Marketing',
-    company: 'GrowthCo',
-    image: '/api/placeholder/80/80',
-    rating: 5,
-    text: 'John\'s ability to understand market dynamics and translate that into successful business strategies is impressive. He\'s a true professional who delivers results.',
-    relationship: 'Former Team Member',
-    linkedinUrl: 'https://linkedin.com/in/lisa-thompson',
-    featured: false
-  },
-  {
-    id: '6',
-    name: 'Alex Martinez',
-    position: 'Senior Developer',
-    company: 'CodeForge',
-    image: '/api/placeholder/80/80',
-    rating: 5,
-    text: 'John is not just a great leader but also a mentor. He has the rare ability to inspire and guide teams while driving innovation and excellence in everything he does.',
-    relationship: 'Mentee',
-    linkedinUrl: 'https://linkedin.com/in/alex-martinez',
+    text: 'Himanshu Yadav is an exceptional student I had the pleasure of teaching and mentoring. He possesses outstanding interpersonal and leadership skills, with a unique ability to connect with people, inspire teamwork, and drive results. His leadership skills were evident in his selfless contributions to various college events throughout his three years. I am confident that Himanshu will excel in his future endeavors and achieve his dreams. His exceptional work ethic, combined with his impressive skills and passion, make him an invaluable asset to any organization. God bless you beta🌺',
+    relationship: 'Principal & Mentor',
+    linkedinUrl: '#',
     featured: false
   }
 ]
@@ -119,13 +86,19 @@ export default function Recommendations() {
                   <CardHeader>
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center space-x-4">
-                        <div className="relative w-16 h-16 rounded-full overflow-hidden">
-                          <Image
-                            src={recommendation.image}
-                            alt={recommendation.name}
-                            fill
-                            className="object-cover"
-                          />
+                        <div className="relative w-16 h-16 rounded-full overflow-hidden bg-primary/20 flex items-center justify-center">
+                          {recommendation.image ? (
+                            <Image
+                              src={recommendation.image}
+                              alt={recommendation.name}
+                              fill
+                              className="object-cover"
+                            />
+                          ) : (
+                            <span className="text-lg font-bold text-primary">
+                              {recommendation.initials}
+                            </span>
+                          )}
                         </div>
                         <div>
                           <h3 className="text-lg font-semibold">{recommendation.name}</h3>
@@ -187,13 +160,19 @@ export default function Recommendations() {
                 <Card className="h-full group hover:shadow-lg transition-shadow duration-300">
                   <CardHeader className="pb-2">
                     <div className="flex items-center space-x-3 mb-3">
-                      <div className="relative w-12 h-12 rounded-full overflow-hidden">
-                        <Image
-                          src={recommendation.image}
-                          alt={recommendation.name}
-                          fill
-                          className="object-cover"
-                        />
+                      <div className="relative w-12 h-12 rounded-full overflow-hidden bg-primary/20 flex items-center justify-center">
+                        {recommendation.image ? (
+                          <Image
+                            src={recommendation.image}
+                            alt={recommendation.name}
+                            fill
+                            className="object-cover"
+                          />
+                        ) : (
+                          <span className="text-sm font-bold text-primary">
+                            {recommendation.initials}
+                          </span>
+                        )}
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="text-sm font-semibold truncate">{recommendation.name}</h3>

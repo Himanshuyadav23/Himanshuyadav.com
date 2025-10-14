@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   keywords: ['Himanshu Yadav', 'DCOMM', 'entrepreneur', 'startup', 'technology', 'innovation', 'speaking'],
   authors: [{ name: 'Himanshu Yadav' }],
   creator: 'Himanshu Yadav',
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',

@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { ArrowRight, Download } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
@@ -26,6 +27,27 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
+            {/* Profile Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex justify-center mb-8"
+            >
+              <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white/20 glow-effect">
+                <Image
+                  src="/images/profile/IMG_8757.HEIC"
+                  alt="Himanshu Yadav"
+                  width={128}
+                  height={128}
+                  className="object-cover w-full h-full"
+                  priority
+                  onError={(e) => {
+                    e.currentTarget.src = '/images/about/WhatsApp Image 2025-04-27 at 5.35.59 PM.jpeg'
+                  }}
+                />
+              </div>
+            </motion.div>
             {/* Main headline with glow effect */}
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-glow">
               Building the{' '}

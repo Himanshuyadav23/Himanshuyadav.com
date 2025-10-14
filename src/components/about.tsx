@@ -43,12 +43,25 @@ export default function About() {
             >
               <div className="relative">
                 <Image
-                  src="/api/placeholder/400/500"
+                  src="/images/about/WhatsApp Image 2025-04-27 at 5.35.59 PM.jpeg"
                   alt="Himanshu Yadav"
-                  width={400}
-                  height={500}
-                  className="rounded-lg shadow-lg"
+                  width={300}
+                  height={375}
+                  className="rounded-lg shadow-lg object-cover w-full h-auto max-w-sm mx-auto"
+                  priority
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none'
+                    e.currentTarget.nextElementSibling.style.display = 'block'
+                  }}
                 />
+                <div className="hidden w-full h-96 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-4xl font-bold text-primary">HY</span>
+                    </div>
+                    <p className="text-muted-foreground">Himanshu Yadav</p>
+                  </div>
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-lg" />
               </div>
               

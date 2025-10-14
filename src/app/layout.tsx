@@ -6,24 +6,24 @@ import { ThemeProvider } from '@/components/theme-provider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'John Doe - Founder & Entrepreneur',
-  description: 'Professional founder and entrepreneur building the future of technology. Explore my ventures, projects, and insights.',
-  keywords: ['founder', 'entrepreneur', 'startup', 'technology', 'innovation'],
-  authors: [{ name: 'John Doe' }],
-  creator: 'John Doe',
+  title: 'Himanshu Yadav - Co-Founder DCOMM',
+  description: 'Co-Founder of DCOMM, building systems that sell themselves. Entrepreneur, speaker, and innovation leader.',
+  keywords: ['Himanshu Yadav', 'DCOMM', 'entrepreneur', 'startup', 'technology', 'innovation', 'speaking'],
+  authors: [{ name: 'Himanshu Yadav' }],
+  creator: 'Himanshu Yadav',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://johndoe.com',
-    title: 'John Doe - Founder & Entrepreneur',
-    description: 'Professional founder and entrepreneur building the future of technology.',
-    siteName: 'John Doe',
+    url: 'https://himanshuyadav.com',
+    title: 'Himanshu Yadav - Co-Founder DCOMM',
+    description: 'Co-Founder of DCOMM, building systems that sell themselves. Entrepreneur, speaker, and innovation leader.',
+    siteName: 'Himanshu Yadav',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'John Doe - Founder & Entrepreneur',
-    description: 'Professional founder and entrepreneur building the future of technology.',
-    creator: '@johndoe',
+    title: 'Himanshu Yadav - Co-Founder DCOMM',
+    description: 'Co-Founder of DCOMM, building systems that sell themselves. Entrepreneur, speaker, and innovation leader.',
+    creator: '@himanshuyadav',
   },
   robots: {
     index: true,

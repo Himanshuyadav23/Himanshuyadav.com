@@ -6,17 +6,17 @@ import { Button } from '@/components/ui/button'
 
 const footerLinks = {
   navigation: [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Ventures', href: '#ventures' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Ventures', href: '/ventures' },
+    { name: 'Recommendations', href: '/recommendations' },
+    { name: 'Speaking', href: '/speaking' },
+    { name: 'Contact', href: '/contact' },
   ],
   ventures: [
-    { name: 'TechFlow', href: 'https://techflow.com' },
-    { name: 'DataVault', href: 'https://datavault.com' },
-    { name: 'GreenTech', href: 'https://greentech.com' },
+    { name: 'DCOMM', href: 'https://www.dcommunications.co.in/' },
+    { name: 'Social Tact', href: 'https://www.instagram.com/social.tact/' },
+    { name: 'BrandPulse', href: '#', disabled: true },
   ],
   social: [
     { name: 'LinkedIn', href: 'https://www.linkedin.com/in/himanshuyadav-93b9151a5', icon: Linkedin },
@@ -85,14 +85,20 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.ventures.map((venture) => (
                 <li key={venture.name}>
-                  <a
-                    href={venture.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {venture.name}
-                  </a>
+                  {venture.disabled ? (
+                    <span className="text-sm text-muted-foreground/60 cursor-not-allowed">
+                      {venture.name} <span className="text-xs">(Under Development)</span>
+                    </span>
+                  ) : (
+                    <a
+                      href={venture.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {venture.name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

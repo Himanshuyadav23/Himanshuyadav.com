@@ -57,9 +57,8 @@ export default function Recommendations() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
           className="max-w-7xl mx-auto"
         >
           {/* Section header */}
@@ -78,9 +77,8 @@ export default function Recommendations() {
               <motion.div
                 key={recommendation.id}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
               >
                 <Card className="h-full glass-effect glow-effect hover-lift border border-white/20 hover:border-white/40 transition-all duration-300">
                   <CardHeader>
@@ -153,9 +151,8 @@ export default function Recommendations() {
               <motion.div
                 key={recommendation.id}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 <Card className="h-full group hover:shadow-lg transition-shadow duration-300">
                   <CardHeader className="pb-2">

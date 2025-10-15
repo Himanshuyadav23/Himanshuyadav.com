@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -19,15 +20,25 @@ const navItems = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
   // theme toggle removed
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
     }
+    
+    // Set initial scroll state
+    handleScroll()
+    
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsOpen(false)
+  }, [pathname])
 
   // theme toggle removed
 
@@ -54,10 +65,18 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-200 relative group"
+                className={`transition-colors duration-200 relative group ${
+                  pathname === item.href 
+                    ? 'text-primary' 
+                    : 'text-foreground hover:text-primary'
+                }`}
               >
                 {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" />
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-white transition-all duration-300 ${
+                  pathname === item.href 
+                    ? 'w-full' 
+                    : 'w-0 group-hover:w-full'
+                }`} />
               </Link>
             ))}
           </div>
@@ -91,7 +110,11 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md transition-colors duration-200"
+                  className={`block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200 ${
+                    pathname === item.href
+                      ? 'text-primary bg-accent'
+                      : 'text-foreground hover:text-primary hover:bg-accent'
+                  }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}

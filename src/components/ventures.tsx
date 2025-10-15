@@ -57,9 +57,8 @@ export default function Ventures() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
           className="max-w-7xl mx-auto"
         >
           {/* Section header */}
@@ -78,9 +77,8 @@ export default function Ventures() {
               <motion.div
                 key={venture.id}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
               >
                 <Card className="h-full glass-effect glow-effect hover-lift border border-white/20 hover:border-white/40 transition-all duration-300 group">
                   <CardHeader className="pb-4">
@@ -138,9 +136,8 @@ export default function Ventures() {
           {/* Call to action */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }}
             className="text-center mt-16"
           >
             <Button size="lg" variant="outline">

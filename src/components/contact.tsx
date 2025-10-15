@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Send, Linkedin, ExternalLink } from 'lucide-react'
+import { Mail, Phone, MapPin, Send, Linkedin, ExternalLink, Github, Instagram } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 
@@ -14,10 +14,28 @@ const socialLinks = [
     color: 'hover:text-blue-600'
   },
   {
-    name: 'Personal',
+    name: 'GitHub',
+    icon: Github,
+    url: 'https://github.com/himanshuyadav',
+    color: 'hover:text-gray-900 dark:hover:text-gray-100'
+  },
+  {
+    name: 'Instagram',
+    icon: Instagram,
+    url: 'https://instagram.com/himanshuyadav',
+    color: 'hover:text-pink-600'
+  },
+  {
+    name: 'X (Twitter)',
+    icon: ExternalLink,
+    url: 'https://x.com/himanshuyadav',
+    color: 'hover:text-blue-400'
+  },
+  {
+    name: 'Linktree',
     icon: ExternalLink,
     url: 'https://t.co/4OY3sbscFl',
-    color: 'hover:text-gray-900 dark:hover:text-gray-100'
+    color: 'hover:text-green-600'
   }
 ]
 
@@ -228,22 +246,24 @@ export default function Contact() {
                   <CardTitle>Follow Me</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex space-x-4">
+                  <div className="grid grid-cols-3 gap-3">
                     {socialLinks.map((social) => (
                       <Button
                         key={social.name}
                         variant="outline"
-                        size="icon"
+                        size="sm"
                         asChild
-                        className={`transition-colors ${social.color}`}
+                        className={`transition-colors ${social.color} flex flex-col items-center space-y-1 h-auto py-3`}
                       >
                         <a
                           href={social.url}
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label={social.name}
+                          className="flex flex-col items-center space-y-1"
                         >
                           <social.icon className="h-5 w-5" />
+                          <span className="text-xs font-medium">{social.name}</span>
                         </a>
                       </Button>
                     ))}

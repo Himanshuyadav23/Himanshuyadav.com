@@ -167,13 +167,17 @@ export default function Speaking() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
           className="max-w-7xl mx-auto"
         >
           {/* Hero Section */}
-          <div className="text-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
               Speaker & Mentor
             </h1>
@@ -181,7 +185,12 @@ export default function Speaking() {
               Inspiring audiences worldwide with insights on entrepreneurship, innovation, and leadership. 
               Available for keynotes, workshops, panel discussions, and mentoring sessions.
             </p>
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-wrap justify-center gap-4 mb-8"
+            >
               <Badge variant="secondary" className="bg-primary/10 text-primary px-4 py-2 text-sm">
                 <Mic className="w-4 h-4 mr-2" />
                 10+ Speaking Engagements
@@ -194,18 +203,23 @@ export default function Speaking() {
                 <Award className="w-4 h-4 mr-2" />
                 Top-Rated Speaker
               </Badge>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="glass-effect glow-effect hover-lift">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white glow-effect hover-lift">
                 <Mail className="w-5 h-5 mr-2" />
                 Invite Me to Speak
               </Button>
-              <Button size="lg" variant="outline" className="glass-effect neon-border hover:bg-white/10 hover:text-white">
+              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Book a Consultation
               </Button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Services Section */}
           <div className="mb-20">
@@ -215,9 +229,8 @@ export default function Speaking() {
                 <motion.div
                   key={service.title}
                   initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
                 >
                   <Card className="h-full text-center hover:shadow-lg transition-shadow duration-300">
                     <CardHeader>
@@ -243,9 +256,8 @@ export default function Speaking() {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
                   className="group cursor-pointer"
                 >
                   <div className="relative aspect-square overflow-hidden rounded-lg glass-effect glow-effect hover-lift border border-white/20 hover:border-white/40 transition-all duration-300">
@@ -256,7 +268,10 @@ export default function Speaking() {
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
                       onError={(e) => {
                         e.currentTarget.style.display = 'none'
-                        e.currentTarget.nextElementSibling.style.display = 'flex'
+                        const nextElement = e.currentTarget.nextElementSibling as HTMLElement
+                        if (nextElement) {
+                          nextElement.style.display = 'flex'
+                        }
                       }}
                     />
                     <div className="hidden absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
@@ -287,9 +302,8 @@ export default function Speaking() {
                 <motion.div
                   key={topic}
                   initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
-                  viewport={{ once: true }}
                 >
                   <Badge variant="outline" className="w-full justify-start p-3 text-sm glass-effect glow-effect border border-white/20 hover:border-white/40 transition-all duration-300">
                     {topic}
@@ -302,27 +316,31 @@ export default function Speaking() {
           {/* Call to Action */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }}
             className="text-center bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl p-12 border border-white/20"
           >
             <h2 className="text-3xl font-bold mb-4">Ready to Book a Speaking Engagement?</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Let&apos;s discuss how I can add value to your next event, conference, or organization.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="glass-effect glow-effect hover-lift">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white glow-effect hover-lift">
                 <Mail className="w-5 h-5 mr-2" />
                 Get in Touch
               </Button>
-              <Button size="lg" variant="outline" className="glass-effect neon-border hover:bg-white/10 hover:text-white" asChild>
+              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white" asChild>
                 <Link href="/contact">
                   View Speaking Kit
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-            </div>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>

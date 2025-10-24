@@ -2,10 +2,21 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { ArrowRight, Download } from 'lucide-react'
+import { ArrowRight, Mic } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { useRouter } from 'next/navigation'
 
 export default function Hero() {
+  const router = useRouter()
+
+  const handleContactClick = () => {
+    router.push('/contact')
+  }
+
+  const handleSpeakingClick = () => {
+    router.push('/speaking')
+  }
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden matrix-bg">
       {/* Cyber grid background */}
@@ -36,15 +47,12 @@ export default function Hero() {
             >
               <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white/20 glow-effect">
                 <Image
-                  src="/images/profile/IMG_8757.HEIC"
+                  src="/images/about/WhatsApp Image 2025-04-27 at 5.35.59 PM.jpeg"
                   alt="Himanshu Yadav"
                   width={128}
                   height={128}
                   className="object-cover w-full h-full"
                   priority
-                  onError={(e) => {
-                    e.currentTarget.src = '/images/about/WhatsApp Image 2025-04-27 at 5.35.59 PM.jpeg'
-                  }}
                 />
               </div>
             </motion.div>
@@ -74,17 +82,19 @@ export default function Hero() {
               <Button 
                 size="lg" 
                 className="text-lg px-8 py-6 h-auto glass-effect glow-effect hover-lift border border-white/20 hover:border-white/40 transition-all duration-300 text-white"
+                onClick={handleContactClick}
               >
-                <span className="relative z-10">View My Work</span>
+                <span className="relative z-10">Contact Me</span>
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button 
                 variant="outline" 
                 size="lg" 
                 className="text-lg px-8 py-6 h-auto glass-effect neon-border hover-lift transition-all duration-300"
+                onClick={handleSpeakingClick}
               >
-                <Download className="mr-2 h-5 w-5" />
-                Download Resume
+                <Mic className="mr-2 h-5 w-5" />
+                Invite Me as Speaker/Judge/Mentor
               </Button>
             </div>
           </motion.div>

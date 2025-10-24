@@ -1,74 +1,38 @@
 "use client"
 
-import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Send, Linkedin, ExternalLink, Github, Instagram } from 'lucide-react'
+import { Mail, MapPin, Linkedin, ExternalLink, Github, Instagram, Send } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 
 const socialLinks = [
   {
-    name: 'LinkedIn',
-    icon: Linkedin,
-    url: 'https://www.linkedin.com/in/himanshuyadav-93b9151a5',
-    color: 'hover:text-blue-600'
-  },
-  {
     name: 'GitHub',
     icon: Github,
-    url: 'https://github.com/himanshuyadav',
+    url: 'https://github.com/Himanshuyadav23',
     color: 'hover:text-gray-900 dark:hover:text-gray-100'
   },
   {
     name: 'Instagram',
     icon: Instagram,
-    url: 'https://instagram.com/himanshuyadav',
+    url: 'https://www.instagram.com/himanshuuuuyadav/',
     color: 'hover:text-pink-600'
+  },
+  {
+    name: 'LinkedIn',
+    icon: Linkedin,
+    url: 'https://www.linkedin.com/in/himanshu-yadav-93b9151a5/',
+    color: 'hover:text-blue-600'
   },
   {
     name: 'X (Twitter)',
     icon: ExternalLink,
-    url: 'https://x.com/himanshuyadav',
+    url: 'https://x.com/Himanshuyadavyt?t=HHbiQa_ULyj4PsPydhCVaw&s=09',
     color: 'hover:text-blue-400'
-  },
-  {
-    name: 'Linktree',
-    icon: ExternalLink,
-    url: 'https://t.co/4OY3sbscFl',
-    color: 'hover:text-green-600'
   }
 ]
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    
-    try {
-      // Simulate API call - replace with actual email service integration
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      setSubmitStatus('success')
-      setFormData({ name: '', email: '', subject: '', message: '' })
-    } catch (error) {
-      setSubmitStatus('error')
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
 
   return (
     <section className="py-20">
@@ -86,127 +50,59 @@ export default function Contact() {
               Let&apos;s Connect
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Ready to collaborate or have a question? I&apos;d love to hear from you.
+              Want to invite me to speak, collaborate on a project, or need strategic advice? I&apos;d love to hear from you.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact form */}
+          <div className="max-w-4xl mx-auto">
+            {/* Direct Email Contact */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
+              className="text-center mb-16"
             >
-              <Card className="glass-effect glow-effect border border-white/20 hover:border-white/40 transition-all duration-300">
-                <CardHeader>
-                  <CardTitle className="text-glow">Send a Message</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid sm:grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="name" className="block text-sm font-medium mb-2">
-                          Name *
-                        </label>
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-3 py-2 border border-white/20 rounded-md bg-white/5 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-300"
-                          placeholder="Your name"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-medium mb-2">
-                          Email *
-                        </label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-3 py-2 border border-white/20 rounded-md bg-white/5 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-300"
-                          placeholder="your@email.com"
-                        />
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                        Subject *
-                      </label>
-                      <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
-                        placeholder="What's this about?"
-                      />
-                    </div>
-                    
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium mb-2">
-                        Message *
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        required
-                        rows={5}
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent resize-none"
-                        placeholder="Tell me about your project or question..."
-                      />
-                    </div>
-                    
+              <Card className="glass-effect glow-effect border border-white/20 hover:border-white/40 transition-all duration-300 p-12">
+                <CardContent className="space-y-8">
+                  <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Mail className="w-10 h-10 text-primary" />
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-2xl font-bold mb-4">Get in Touch</h3>
+                    <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+                      Ready to collaborate or have a question? Send me an email directly and I'll get back to you as soon as possible.
+                    </p>
+                  </div>
+                  
+                  <div className="space-y-4">
                     <Button 
-                      type="submit" 
-                      className="w-full glass-effect glow-effect border border-white/20 hover:border-white/40 hover:bg-white/10 transition-all duration-300" 
-                      disabled={isSubmitting}
+                      size="lg" 
+                      className="bg-primary text-primary-foreground hover:bg-primary/90 border border-primary/20 hover:border-primary/40 transition-all duration-300 font-medium px-8 py-6"
+                      asChild
                     >
-                      {isSubmitting ? (
-                        'Sending...'
-                      ) : (
-                        <>
-                          <Send className="mr-2 h-4 w-4" />
-                          Send Message
-                        </>
-                      )}
+                      <a href="mailto:hy486516@gmail.com">
+                        <Mail className="mr-2 h-5 w-5" />
+                        Send Email
+                      </a>
                     </Button>
                     
-                    {submitStatus === 'success' && (
-                      <p className="text-green-600 text-sm text-center">
-                        Message sent successfully! I&apos;ll get back to you soon.
-                      </p>
-                    )}
-                    
-                    {submitStatus === 'error' && (
-                      <p className="text-red-600 text-sm text-center">
-                        Something went wrong. Please try again or contact me directly.
-                      </p>
-                    )}
-                  </form>
+                    <p className="text-sm text-muted-foreground">
+                      Or copy my email: <span className="font-mono bg-muted px-2 py-1 rounded">hy486516@gmail.com</span>
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>
 
             {/* Contact info and social links */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
-              className="space-y-8"
+              className="grid md:grid-cols-2 gap-8"
             >
               {/* Contact information */}
               <Card>
@@ -222,13 +118,6 @@ export default function Contact() {
                     </div>
                   </div>
                   
-                  <div className="flex items-center space-x-3">
-                    <Phone className="h-5 w-5 text-primary" />
-                    <div>
-                      <p className="font-medium">Phone</p>
-                      <p className="text-sm text-muted-foreground">6263597941</p>
-                    </div>
-                  </div>
                   
                   <div className="flex items-center space-x-3">
                     <MapPin className="h-5 w-5 text-primary" />

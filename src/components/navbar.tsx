@@ -70,9 +70,13 @@ export default function Navbar() {
                     ? 'text-primary' 
                     : 'text-foreground hover:text-primary'
                 }`}
+                onClick={() => {
+                  // Ensure navigation works properly
+                  setIsOpen(false)
+                }}
               >
                 {item.name}
-                <span className={`absolute bottom-0 left-0 h-0.5 bg-white transition-all duration-300 ${
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
                   pathname === item.href 
                     ? 'w-full' 
                     : 'w-0 group-hover:w-full'
@@ -103,7 +107,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-border bg-background/95 backdrop-blur-md"
+            className="md:hidden border-t border-white/20 bg-background/95 backdrop-blur-md"
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
@@ -112,10 +116,12 @@ export default function Navbar() {
                   href={item.href}
                   className={`block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200 ${
                     pathname === item.href
-                      ? 'text-primary bg-accent'
-                      : 'text-foreground hover:text-primary hover:bg-accent'
+                      ? 'text-primary bg-primary/10'
+                      : 'text-foreground hover:text-primary hover:bg-primary/5'
                   }`}
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false)
+                  }}
                 >
                   {item.name}
                 </Link>

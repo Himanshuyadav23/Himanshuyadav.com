@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { Calendar, Clock, Users, MapPin, ExternalLink, Mic, Award, BookOpen, ArrowRight, Mail, Phone } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -159,8 +160,13 @@ const topics = [
 ]
 
 export default function Speaking() {
+  const router = useRouter()
   const featuredEngagements = speakingEngagements.filter(engagement => engagement.featured)
   const otherEngagements = speakingEngagements.filter(engagement => !engagement.featured)
+
+  const handleContactClick = () => {
+    router.push('/contact')
+  }
 
   return (
     <section className="py-20 bg-muted/30">
@@ -210,11 +216,11 @@ export default function Speaking() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white glow-effect hover-lift">
+              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white glow-effect hover-lift" onClick={handleContactClick}>
                 <Mail className="w-5 h-5 mr-2" />
                 Invite Me to Speak
               </Button>
-              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white">
+              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white" onClick={handleContactClick}>
                 <Phone className="w-5 h-5 mr-2" />
                 Book a Consultation
               </Button>
@@ -330,15 +336,9 @@ export default function Speaking() {
               transition={{ duration: 0.6, delay: 0.9 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white glow-effect hover-lift">
+              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white glow-effect hover-lift" onClick={handleContactClick}>
                 <Mail className="w-5 h-5 mr-2" />
                 Get in Touch
-              </Button>
-              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white" asChild>
-                <Link href="/contact">
-                  View Speaking Kit
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
               </Button>
             </motion.div>
           </motion.div>

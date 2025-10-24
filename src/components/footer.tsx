@@ -109,7 +109,6 @@ export default function Footer() {
             <h3 className="font-semibold mb-4">Contact</h3>
             <div className="space-y-2 text-sm text-muted-foreground">
               <p>hy486516@gmail.com</p>
-              <p>6263597941</p>
               <p>Madhya Pradesh, India</p>
             </div>
           </div>

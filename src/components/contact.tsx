@@ -72,7 +72,7 @@ export default function Contact() {
                   <div>
                     <h3 className="text-2xl font-bold mb-4">Get in Touch</h3>
                     <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-                      Ready to collaborate or have a question? Send me an email directly and I'll get back to you as soon as possible.
+                      Ready to collaborate or have a question? Send me an email directly and I&apos;ll get back to you as soon as possible.
                     </p>
                   </div>
                   

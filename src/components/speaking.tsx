@@ -10,16 +10,16 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
 const speakingImages = [
-  '/images/speaking/DSP_6742.JPG',
-  '/images/speaking/IMG_6920.jpg',
-  '/images/speaking/IMG_6921.jpg',
-  '/images/speaking/IMG_6922.jpg',
-  '/images/speaking/IMG_8721.jpg',
-  '/images/speaking/IMG_8757.jpg',
-  '/images/speaking/IMG_8800.jpg',
-  '/images/speaking/IMG20220930140116.jpg',
-  '/images/speaking/RSP_0291.jpg',
-  '/images/speaking/RSP_8742.jpg'
+  '/images/speaking/DSP_6742.webp',
+  '/images/speaking/IMG_6920.webp',
+  '/images/speaking/IMG_6921.webp',
+  '/images/speaking/IMG_6922.webp',
+  '/images/speaking/IMG_8721.webp',
+  '/images/speaking/IMG_8757.webp',
+  '/images/speaking/IMG_8800.webp',
+  '/images/speaking/IMG20220930140116.webp',
+  '/images/speaking/RSP_0291.webp',
+  '/images/speaking/RSP_8742.webp'
 ]
 
 const speakingEngagements = [

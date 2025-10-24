@@ -39,5 +39,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "Professional founder-style personal website"
+  "description": "Professional founder-style personal website",
+  "devDependencies": {
+    "sharp": "^0.34.4"
+  }
 }

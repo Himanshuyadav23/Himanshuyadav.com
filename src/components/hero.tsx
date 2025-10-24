@@ -47,7 +47,7 @@ export default function Hero() {
             >
               <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white/20 glow-effect">
                 <Image
-                  src="/images/about/WhatsApp Image 2025-04-27 at 5.35.59 PM.jpeg"
+                  src="/images/about/WhatsApp Image 2025-04-27 at 5.35.59 PM.webp"
                   alt="Himanshu Yadav"
                   width={128}
                   height={128}

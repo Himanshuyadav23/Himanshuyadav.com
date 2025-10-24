@@ -158,7 +158,7 @@ export default function About() {
   const awardPhotos = [
     {
       id: 1,
-      src: '/images/awards/IMG_20240324_205403505_HDR.jpg',
+      src: '/images/awards/IMG_20240324_205403505_HDR.webp',
       title: 'Best All Rounder Award',
       year: '2024',
       organization: 'Softvision College',
@@ -166,7 +166,7 @@ export default function About() {
     },
     {
       id: 2,
-      src: '/images/awards/DSP_7000.JPG',
+      src: '/images/awards/DSP_7000.webp',
       title: 'Innovision Winner',
       year: '2024',
       organization: 'Softvision College & GSB',
@@ -174,7 +174,7 @@ export default function About() {
     },
     {
       id: 3,
-      src: '/images/awards/IMG-20240316-WA0006.jpg',
+      src: '/images/awards/IMG-20240316-WA0006.webp',
       title: 'Young Achievers PR',
       year: '2024',
       organization: 'Softvision College',
@@ -182,7 +182,7 @@ export default function About() {
     },
     {
       id: 4,
-      src: '/images/awards/IMG_20230828_103457.jpg',
+      src: '/images/awards/IMG_20230828_103457.webp',
       title: 'Selfless Service Award',
       year: '2023',
       organization: 'Softvision College',
@@ -190,7 +190,7 @@ export default function About() {
     },
     {
       id: 5,
-      src: '/images/awards/IMG_5101.JPG',
+      src: '/images/awards/IMG_5101.webp',
       title: 'Techno Brainy Award',
       year: '2022',
       organization: 'Softvision College',
@@ -198,7 +198,7 @@ export default function About() {
     },
     {
       id: 6,
-      src: '/images/awards/RSP_0145.jpg',
+      src: '/images/awards/RSP_0145.webp',
       title: 'Student of the Year',
       year: '2015',
       organization: 'Mount Carmel School',
@@ -206,7 +206,7 @@ export default function About() {
     },
     {
       id: 7,
-      src: '/images/awards/RSP_0196.jpg',
+      src: '/images/awards/RSP_0196.webp',
       title: 'Student of the Year',
       year: '2014',
       organization: 'Mount Carmel School',
@@ -214,7 +214,7 @@ export default function About() {
     },
     {
       id: 8,
-      src: '/images/awards/DSP_7073.JPG',
+      src: '/images/awards/DSP_7073.webp',
       title: 'Head Boy Recognition',
       year: '2024',
       organization: 'Softvision College',
@@ -222,7 +222,7 @@ export default function About() {
     },
     {
       id: 9,
-      src: '/images/awards/6O0A4097.JPG',
+      src: '/images/awards/6O0A4097.webp',
       title: 'Award Ceremony',
       year: '2024',
       organization: 'Softvision College',
@@ -230,7 +230,7 @@ export default function About() {
     },
     {
       id: 10,
-      src: '/images/awards/6O0A4648.JPG',
+      src: '/images/awards/6O0A4648.webp',
       title: 'Achievement Recognition',
       year: '2024',
       organization: 'Softvision College',
@@ -238,7 +238,7 @@ export default function About() {
     },
     {
       id: 11,
-      src: '/images/awards/DSP_7311 (1).JPG',
+      src: '/images/awards/DSP_7311 (1).webp',
       title: 'Award Ceremony',
       year: '2024',
       organization: 'Softvision College',
@@ -246,7 +246,7 @@ export default function About() {
     },
     {
       id: 12,
-      src: '/images/awards/IMG_5080.JPG',
+      src: '/images/awards/IMG_5080.webp',
       title: 'Achievement Recognition',
       year: '2024',
       organization: 'Softvision College',
@@ -285,7 +285,7 @@ export default function About() {
             >
               <div className="relative">
                 <Image
-                  src="/images/about/WhatsApp Image 2025-04-27 at 5.35.59 PM.jpeg"
+                  src="/images/about/WhatsApp Image 2025-04-27 at 5.35.59 PM.webp"
                   alt="Himanshu Yadav"
                   width={300}
                   height={375}

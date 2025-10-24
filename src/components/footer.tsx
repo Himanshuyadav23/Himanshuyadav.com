@@ -1,7 +1,7 @@
 "use client"
 
 import Link from 'next/link'
-import { Linkedin, Mail, ExternalLink } from 'lucide-react'
+import { Linkedin, Mail, ExternalLink, Github, Instagram } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const footerLinks = {
@@ -19,8 +19,10 @@ const footerLinks = {
     { name: 'BrandPulse', href: '#', disabled: true },
   ],
   social: [
-    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/himanshuyadav-93b9151a5', icon: Linkedin },
-    { name: 'Personal', href: 'https://t.co/4OY3sbscFl', icon: ExternalLink },
+    { name: 'GitHub', href: 'https://github.com/Himanshuyadav23', icon: Github },
+    { name: 'Instagram', href: 'https://www.instagram.com/himanshuuuuyadav/', icon: Instagram },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/himanshu-yadav-93b9151a5/', icon: Linkedin },
+    { name: 'X (Twitter)', href: 'https://x.com/Himanshuyadavyt?t=HHbiQa_ULyj4PsPydhCVaw&s=09', icon: ExternalLink },
     { name: 'Email', href: 'mailto:hy486516@gmail.com', icon: Mail },
   ]
 }
